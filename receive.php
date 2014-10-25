@@ -76,8 +76,6 @@ $patrickFacts[] = "I like to help my friends with programming in my spare time!"
 $patrickFacts[] = "I've never met another panda :(";
 $patrickFacts[] = "I have lots of friends who are all different types of animals!";
 
-
-
 if(!file_exists($phoneNumberFile)) {
 	sendMessage($phoneNumber, "Hi, I'm Patrick the panda!\nAsk me questions!\nYou can ask where I am, what I'm doing, or how I am!\nYou can also ask me for jokes, panda facts, or facts about me!");
 } else {
@@ -133,10 +131,8 @@ function sendMessage($to, $myMessage) {
 	  
 	// Setup and send a message
 	$message = array( "to" => $to, "message" => $myMessage, "from" => "447860033750" );
-	//$result = $clockwork->send( $message );
-	var_dump($message);
-	return; 
-
+	$result = $clockwork->send( $message );
+	
 	// Check if the send was successful
 	if( $result["success"] ) {
 	    echo "Message sent - ID: " . $result["id"];
